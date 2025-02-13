@@ -35,7 +35,7 @@ function App() {
 
             <div className="bg-white dark:bg-gray-900 shadow-2xl rounded-2xl p-8 max-w-xl w-full transition-all">
                 <h1 className="text-4xl font-bold text-gray-800 text-center mb-4">🚀 TaskMate</h1>
-                <p className="text-gray-500 dark:text-gray-400 text-center mb-6">Plan. Execute. Achieve.</p>
+                <p className="text-gray-500 dark:text-gray-700 text-center mb-6">Plan. Execute. Achieve.</p>
 
                 {/* Input Field */}
                 <div className="flex items-center bg-gray-100 dark:bg-gray-200 p-2 rounded-xl shadow-inner">
@@ -44,7 +44,7 @@ function App() {
                         value={newTask}
                         onChange={(e) => setNewTask(e.target.value)}
                         placeholder="Add a new task..."
-                        className="flex-1 bg-transparent px-4 py-2 text-gray-800 dark:text-white focus:outline-none"
+                        className="flex-1 bg-transparent px-4 py-2 text-gray-800 focus:outline-none"
                     />
                     <button onClick={addTask}
                         className="px-4 py-2 bg-blue-500 dark:bg-gray-800 text-white font-semibold rounded-lg hover:bg-blue-600 transition-all"> +
