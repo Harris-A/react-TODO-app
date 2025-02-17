@@ -4,7 +4,7 @@ const Navbar = () => {
     return (
             <nav className="navbar navbar-expand-lg navbar-light dark:bg-transparent mb-5 w-100">
                 <div className="container">
-                    <a className="navbar-brand"><img src="/logo192.png" width="50"/></a>
+                    <a className="navbar-brand bg-transparent p-6"><img src="/logo192.png" width="50"/></a>
                     <DarkModeToggle /> {/* Add the dark mode toggle button */}
                 </div>
             </nav>
