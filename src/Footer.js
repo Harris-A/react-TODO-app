@@ -1,18 +1,10 @@
-import React from "react";
-import { FooterCopyright, FooterLink, FooterLinkGroup } from "flowbite-react";
-
 const Footer = () => {
     return (
-        <Footer container>
-            <FooterCopyright href="#" by="Flowbite™" year={2022} />
-            <FooterLinkGroup>
-                <FooterLink href="#">About</FooterLink>
-                <FooterLink href="#">Privacy Policy</FooterLink>
-                <FooterLink href="#">Licensing</FooterLink>
-                <FooterLink href="#">Contact</FooterLink>
-            </FooterLinkGroup>
-        </Footer>
+        <footer className="bg-transparent text-gray-800 dark:text-white py-4 text-center mt-10 absolute bottom-0">
+            <div className="container mx-auto px-4">
+                <p className="text-sm">&copy; {new Date().getFullYear()} Harris To-Do App. All rights reserved.</p>
+            </div>
+        </footer>
     );
-}
-
+};
 export default Footer;

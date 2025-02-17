@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
+import Footer from "./Footer"
 
 const API_URL = "http://localhost:5000/tasks";
 
@@ -77,6 +78,7 @@ function App() {
                     ))}
                 </ul>
             </div>
+            <Footer />
         </div>
     );
 }
