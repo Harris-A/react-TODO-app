@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
@@ -76,29 +76,29 @@ function App() {
                                 className="space-y-4 mt-5 sm:mt-6"
                             >
                                 {tasks.length > 0 ? (
-                                    tasks.map((task, index) => (
-                                        <Draggable key={task.id} draggableId={task.id.toString()} index={index}>
+                                    tasks.map((tasks, index) => (
+                                        <Draggable key={tasks.id} draggableId={tasks.id.toString()} index={index}>
                                             {(provided, snapshot) => (
                                                 <li
                                                     ref={provided.innerRef}
                                                     {...provided.draggableProps}
                                                     {...provided.dragHandleProps}
-                                                    className={`flex items-center justify-between p-4 sm:p-5 bg-gray-50 dark:bg-gray-500 shadow-md rounded-xl transition-all ${
-                                                        snapshot.isDragging ? "bg-gray-200 dark:bg-gray-700" : ""
+                                                    className={`flex items-center justify-between p-4 sm:p-5 bg-gray-50 dark:bg-gray-900 shadow-md rounded-xl transition-all ${
+                                                        snapshot.isDragging ? "bg-gray-200 dark:bg-gray-" : ""
                                                     }`}
                                                 >
                                                     <span
-                                                        onClick={() => toggleComplete(task.id, task.completed)}
+                                                        onClick={() => toggleComplete(tasks.id, tasks.completed)}
                                                         className={`cursor-pointer flex-1 text-lg transition-all ${
-                                                            task.completed
-                                                                ? "line-through text-gray-400 dark:text-gray-500 bg-green-600"
+                                                            tasks.completed
+                                                                ? "line-through text-gray-400 dark:text-gray-500"
                                                                 : "text-gray-800 dark:text-white "
                                                         }`}
                                                     >
-                                                        {task.title}
+                                                        {tasks.title}
                                                     </span>
                                                     <button
-                                                        onClick={() => deleteTask(task.id)}
+                                                        onClick={() => deleteTask(tasks.id)}
                                                         className="px-3 py-1 bg-red-500 text-white text-sm font-semibold rounded-lg hover:bg-red-600 transition-all"
                                                     >
                                                         Delete
