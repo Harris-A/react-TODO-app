@@ -1,3 +1,4 @@
+
 name: react-project
 
 services:
@@ -10,21 +11,10 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-harris}
       POSTGRES_DB: ${POSTGRES_DB:-todo}
       TIMEZONE: ${TIMEZONE:-Europe/London}
-    ports: ["${POSTGRES_PORT}:5432"]
+    ports:
+      - "${POSTGRES_PORT:-5433}:5432"
     volumes:
       - postgres-data:/var/lib/postgresql/data
-      - postgres-etc:/etc/postgresql
 
 volumes:
   postgres-data:
-    driver: local
-    driver_opts:
-      type: none
-      device: ${DOCKER_DIR}/postgres/data
-      o: bind
-  postgres-etc:
-    driver: local
-    driver_opts:
-      type: none
-      device: ${DOCKER_DIR}/postgres/etc
-      o: bind
